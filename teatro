@@ -126,3 +126,6 @@ INSERT INTO personagem (codfilme, codator, personagem, cacheperso) VALUES
 ('f8', 'a3', 'Bette', 3000000),
 ('f9', 'a9', 'Blade', 100000000);
 
+select * from ator;
+select * from filme;
+select * from personagem;
