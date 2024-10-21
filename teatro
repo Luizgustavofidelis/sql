@@ -84,7 +84,7 @@ INSERT INTO filme (codfilme, nomefilme, anofilme, orcamento, tempo) VALUES
 ('f8', 'A Vingança de Bette', 1998, 10000000, 9),
 ('f9', 'Blade, o Caçador de Vampiros', 1998, 100000000, 18);
 
-INSERT INTO filmes (codfilme, codator, personagem, cacheperso) VALUES
+INSERT INTO personagem (codfilme, codator, personagem, cacheperso) VALUES
 ('f1', 'a1', 'Mary', 30000),
 ('f10', 'a10', 'Columbo', 3000000),
 ('f11', 'a11', 'Johnny', 8000000),
@@ -125,6 +125,4 @@ INSERT INTO filmes (codfilme, codator, personagem, cacheperso) VALUES
 ('f7', 'a8', 'Bill', 5000000),
 ('f8', 'a3', 'Bette', 3000000),
 ('f9', 'a9', 'Blade', 100000000);
-
-
 
