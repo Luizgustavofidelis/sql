@@ -1,0 +1,77 @@
+create database clinica;
+use clinica;
+
+create table medico(
+
+codmed int primary key,
+nomemed varchar(40) not null,
+datanasc date not null,
+cpf char(11),
+cidade varchar(30) not null,
+especialidade varchar(30) not null
+);
+
+create table paciente(
+codpac int primary key,
+nomepac varchar(40) not null,
+datanasc date not null,
+cpf char(11) not null,
+cidade varchar(30) not null
+);
+
+CREATE TABLE consulta
+(
+codmed INT NOT NULL,
+codpac INT NOT NULL,
+datacons DATE NOT NULL,
+hora TIME NOT NULL,
+PRIMARY KEY (codmed, codpac, datacons, hora),
+FOREIGN KEY (codmed) references medico(codmed),
+FOREIGN KEY (codpa) references paciente(codpac)
+);
+
+
+insert into medico values(1,'joao','28/06/1984','100000100','ortopedia');
+
+insert into medico values(2,'maria','28/06*1984','1001001011010','traumatologia');
+
+insert into medico values(3,'pedro','13/07/1970','101010100100','otodpdeia');
+
+insert into medico values(4,'marcia','25/11/1956','110100100100','triologia');
+
+insert into medico values(5,'carlos','15/08/1945','1010110010100','pediatra');
+
+insert into medico values(6,'luciana','25/04/1975','100101100100','desempregada');
+
+select * from medico;
+
+insert into paciente values(1,'ana','28/06/1984','10200200100','florianopolis');
+
+insert into paciente values(2,'paulo','28/06*1984','10014001011010','prot velho');
+
+insert into paciente values(3,'lucia','13/07/1970','101010522100100','blumenau');
+
+insert into paciente values(4,'carlos','25/11/1956','1101561200100100','fortazeloa');
+
+insert into paciente values(5,'luiz','15/08/1945','101011120010100','rio branco');
+
+insert into paciente values(6,'mauricio','25/04/1975','10010621100100','jaminie');
+
+select * from paciente;
+
+insert into consulta values(1,'1','25/04/1975','15:40');
+insert into consulta values(1,'4','25/04/1975','10:00');
+insert into consulta values(2,'1','25/04/1975','9:00');
+insert into consulta values(2,'2','25/04/1975','12:00');
+insert into consulta values(2,'3','25/04/1975','13:00');
+insert into consulta values(2,'4','25/04/1975','14:00');
+insert into consulta values(2,'6','25/04/1975','15:00');
+insert into consulta values(2,'3','25/04/1975','16:00');
+insert into consulta values(3,'6','25/04/1975','17:00');
+insert into consulta values(3,'7','25/04/1975','18:00');
+insert into consulta values(5,'3','25/04/1975','19:00');
+insert into consulta values(6,'1','25/04/1975','20:00');
+
+use clinica;
+alter table medico add crm int;
+select * from
